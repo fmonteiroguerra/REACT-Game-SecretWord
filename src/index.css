@@ -1,0 +1,29 @@
+html, body{
+  height: 100%;
+}
+
+body{
+  background: linear-gradient(to bottom, rgb(101, 31, 167),rgb(7, 105, 69), rgb(45, 9, 50));
+}
+
+button{
+  background-color: rgb(81, 16, 142);
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid white;
+  border-radius: 25px;
+  height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: .4s;
+  text-align: center;
+}
+
+button:hover{
+  background-color:  rgb(101, 31, 167);
+  color: gold;
+  font-size: 1.3em;
+}

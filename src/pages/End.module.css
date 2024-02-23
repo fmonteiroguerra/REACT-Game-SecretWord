@@ -1,0 +1,11 @@
+.game_over{
+    font-size: 5em;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.pontos{
+    font-size: 1.5em;
+    margin-bottom: 50px;
+    color: gold;
+}

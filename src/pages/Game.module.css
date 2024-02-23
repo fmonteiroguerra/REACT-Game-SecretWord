@@ -1,0 +1,55 @@
+h1{
+    font-size: 2em;
+}
+
+.points{
+    font-weight: bold;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+    color: black;
+}
+
+.lettersCointainer{
+    margin: 1.5em;
+    padding: 1.5em;
+    border: 20px solid gold;
+    display: flex; /*para posicionar as letras uma do lado da outra*/
+}
+
+.revealLetter{
+    font-size: 70px;
+    line-height: 1.5em;
+    border: 3px solid black;
+    height: 100px;
+    width: 100px;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.userLetter p{
+    margin-bottom: 1.2em;
+}
+
+.userLetter form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userLetter input{
+    height: 50px;
+    width: 50px;
+    font-size: 2em;
+    text-align: center;
+    margin-right: 1em;
+}
+
+.blankSquare{
+    border: 3px solid black;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
