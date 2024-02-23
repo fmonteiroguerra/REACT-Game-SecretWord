@@ -2,6 +2,10 @@ import React, { useState, useRef } from 'react'
 import styles from './Game.module.css'
 
 const Game = ({word, category, letters, guessedLetters, wrongLetters, shotsLeft, points,  verifyLetter, letterShot, setLetterShot}) => {
+    
+    const focus = ()=> {
+        letterInputRef.current.focus()
+    }
 
     const handleSubmit = (e)=> {
         e.preventDefault()
@@ -11,12 +15,13 @@ const Game = ({word, category, letters, guessedLetters, wrongLetters, shotsLeft,
     }
 
     const letterInputRef = useRef(null)
-
+    
    // console.log(word)
 
 
   return (
-    <div className={styles.game}>
+    
+    <div onMouseOver={focus} className={styles.game}>
        
         <h1>Adivinhe a palavra</h1>
         <h3 className={styles.tip}>
@@ -43,7 +48,7 @@ const Game = ({word, category, letters, guessedLetters, wrongLetters, shotsLeft,
                 onChange={(e)=>setLetterShot(e.target.value.toUpperCase())} 
                 ref={letterInputRef}
                 /> {/*ele vai modificar o state a cada modificação mas a verificação da letra só será feita ao submeter*/}
-
+                
                 <button type='submit'>Enviar</button>
             </form>
         </div>
@@ -52,9 +57,11 @@ const Game = ({word, category, letters, guessedLetters, wrongLetters, shotsLeft,
          {wrongLetters.map((e,i)=>
             <span key={i} className='wrongLetters'>{e}</span>
         )}
+        
     </div>
     
   )
+  
 }
 
 export default Game
