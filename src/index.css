@@ -1,9 +1,12 @@
 html, body{
   height: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 body{
   background: linear-gradient(to bottom, rgb(101, 31, 167),rgb(7, 105, 69), rgb(45, 9, 50));
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 button{

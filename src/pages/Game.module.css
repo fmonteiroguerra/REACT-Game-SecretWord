@@ -1,6 +1,10 @@
-h1{
+.game h1{
+
     font-size: 2em;
+    margin-top: 0;
 }
+
+
 
 .points{
     font-weight: bold;
@@ -47,9 +51,80 @@ h1{
     margin-right: 1em;
 }
 
+
+
 .blankSquare{
     border: 3px solid black;
     height: 100px;
     width: 100px;
     background-color: white;
+}
+
+@media (max-width: 900px) {
+   
+    .revealLetter{
+        font-size: 70px;
+        line-height: 1.5em;
+        border: 3px solid black;
+        height: 70px;
+        width: 70px;
+        text-transform: uppercase;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    .blankSquare{
+        border: 3px solid black;
+        height: 70px;
+        width: 70px;
+        background-color: white;
+    }
+
+    .revealLetter{
+        font-size: 50px;
+        line-height: 1.5em;
+        border: 3px solid black;
+        height: 70px;
+        width: 70px;
+        text-transform: uppercase;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+}
+
+
+@media (max-width: 600px) {
+   
+    .revealLetter{
+        font-size: 70px;
+        line-height: 1.5em;
+        border: 3px solid black;
+        height: 40px;
+        width: 40px;
+        text-transform: uppercase;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    .blankSquare{
+        border: 3px solid black;
+        height: 32px;
+        width:32px;
+        background-color: white;
+    }
+
+    .revealLetter{
+        font-size: 25px;
+        line-height: 1.5em;
+        border: 3px solid black;
+        height: 32px;
+        width: 32px;
+        text-transform: uppercase;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
 }

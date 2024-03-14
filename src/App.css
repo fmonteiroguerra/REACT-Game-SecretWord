@@ -4,4 +4,32 @@
   align-items: center;
   text-align: center;
   color: white;
+  height: 100%;
+  
+}
+
+.about{
+  display: flex;
+  justify-content: end;  
+  align-items: end;
+  
+}
+
+.about button{
+  border: none;
+  background-color: transparent;
+  text-transform: none;
+  font-size: 1.0em;
+}
+
+.about button:hover{
+  border: none;
+  background-color: transparent;
+  text-transform: none;
+  font-size: 1.1em;
+}
+
+.aboutComponent{
+  max-width: 500px;
+
 }

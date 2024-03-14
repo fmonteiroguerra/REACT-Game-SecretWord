@@ -4,13 +4,15 @@ import Home from './pages/Home'
 import { originalWordsList } from './data/words'
 import End from './pages/End'
 import Game from './pages/Game'
+import About from './pages/About'
 
 // estágios do jogo
 
 const stages = [
   {id: 1, name: 'start'},
   {id: 2, name: 'game'},
-  {id: 3, name: 'end'}
+  {id: 3, name: 'end'},
+  {id: 4, name: 'about'}
 ]
 
 function App() {
@@ -43,6 +45,10 @@ function App() {
   //função para que ao clicar no botão, passe para o estágio Game, 
   const goToGame = ()=>{
 
+    clearWordStates()
+  
+    setGameStage(2)
+
     // MAS ANTES de mudar para o estágio game, temos que preparar este component com:
 
     //1- Sortear a palavra a ser adivinhada, e também precisaremos do nome da categoria para exibir como dica
@@ -67,7 +73,7 @@ const uniqueLetters = [... new Set(letters)]
 
 const [guessedLetters , setGuessedLetters] = useState([])
 const [wrongLetters , setWrongLetters] = useState([])
-const [shotsLeft, setShotsLeft] = useState(5)
+const [shotsLeft, setShotsLeft] = useState(8)
 const [points, setPoints] = useState(0)
 
 const [letterShot, setLetterShot] = useState("")
@@ -121,7 +127,7 @@ useEffect(()=>{
     clearWordStates()
     setPoints(0)
     setWordsList(originalWordsList)
-    setShotsLeft(5)
+    setShotsLeft(8)
     setGameStage(2)
   }
   const clearWordStates = ()=> {
@@ -129,29 +135,39 @@ useEffect(()=>{
     setGuessedLetters([])
   }
 
+  const handleAbout = () => {
+    setGameStage(4)
+  }
+
   return (
-    <div className='App'>
-      {/* Renderização Condicional de components */}
-      {gameStage == 1 && <Home start={goToGame} />}
-      {gameStage == 2 && 
-        <Game 
-        word={word}
-        category={category}
-        letters={letters}
-        guessedLetters={guessedLetters}
-        wrongLetters={wrongLetters}
-        shotsLeft={shotsLeft}
-        points={points}
-        letterShot={letterShot}
-        setLetterShot={setLetterShot}
+    <div>
+      <div className='about'>   
+        {gameStage !=4 && <button onClick={handleAbout} >Sobre</button> }
+      </div>
+      <div className='App'>
+        {/* Renderização Condicional de components */}
+        {gameStage == 1 && <Home start={goToGame} />}
+        {gameStage == 2 && 
+          <Game 
+          word={word}
+          category={category}
+          letters={letters}
+          guessedLetters={guessedLetters}
+          wrongLetters={wrongLetters}
+          shotsLeft={shotsLeft}
+          points={points}
+          letterShot={letterShot}
+          setLetterShot={setLetterShot}
 
-        verifyLetter={verifyLetter}
+          verifyLetter={verifyLetter}
 
-        />
-      }
-      {gameStage == 3 && <End retry={retry} points={points}/>}
+          />
+        }
+        {gameStage == 3 && <End retry={retry} points={points}/>}
 
-    
+        {gameStage == 4 && <About start={goToGame} />}
+
+      </div>
     </div>
   )
 }
